@@ -8,7 +8,6 @@ let pergunta = 1
 let resposta = ""
 let idInputResposta = ""
 let respostaCorretaId = ""
-
 botaoTema.addEventListener("click", () => {
     trocarTema(body, botaoTema)
 })
@@ -25,7 +24,7 @@ function alterarAssunto() {
 async function buscarPerguntas() {
     const urlDados = "../../data.json"
    await fetch(urlDados).then(resposta => resposta.json()).then(dados => {
-        dados.quizzes.forEach(dado =>{
+        dados.quizzes.forEach(dado => {
             if (dado.title === assunto) {
                 quiz = dado
             }
@@ -67,14 +66,14 @@ function montarPergunta() {
                 <label for="alternativa_c">
                     <input type="radio" id="alternativa_c" name="alternativa" value="${alterarSinais(quiz.questions[pergunta-1].options[2])}">
                     <div>
-                        <span>C</span>         
+                        <span>C</span>
                         ${alterarSinais(quiz.questions[pergunta-1].options[2])}
                     </div>             
                 </label>
                 <label for="alternativa_d">
                     <input type="radio" id="alternativa_d" name="alternativa" value="${alterarSinais(quiz.questions[pergunta-1].options[3])}">
                     <div>
-                        <span>D</span>          
+                        <span>D</span>
                         ${alterarSinais(quiz.questions[pergunta-1].options[3])}                   
                     </div>
                 </label>
@@ -86,7 +85,6 @@ function montarPergunta() {
 function alterarSinais(texto) {
     return texto.replace(/</g, "&lt;").replace(/>/g, "&gt;")
 }
-
 function guardarResposta(evento) {
     resposta = evento.target.value
     idInputResposta = evento.target.id
@@ -106,8 +104,6 @@ function validarResposta() {
         botaoEnviar.addEventListener("click", proximaPergunta)
     }
 
-
-
     if (resposta === quiz.questions[pergunta-1].answer) {
         document.querySelector(`label[for='${idInputResposta}']`) .setAttribute("id", "correta")
         pontos = pontos + 1
@@ -115,18 +111,18 @@ function validarResposta() {
         document.querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "errada")
         document.querySelector(`label[for='${respostaCorretaId}']`).setAttribute("id", "correta")
     }
+
     pergunta = pergunta + 1
     console.log(pergunta)
 }
 
+function finalizar() {
+    localStorage.setItem("pontos", pontos)
 
-    function finalizar() {
-        localStorage.setItem("pontos", pontos)
-    
-        window.location.href = "../resultado/resultado.html"
-    }
-    
-    function proximaPergunta () {
+    window.location.href = "../resultado/resultado.html"
+}
+
+function proximaPergunta () {
     montarPergunta()
     adicionarEventoInputs()
 }
@@ -135,7 +131,6 @@ function adicionarEventoInputs() {
     const inputsResposta = document.querySelectorAll(".alternativas input")
     inputsResposta.forEach(input => {
         input.addEventListener("click", guardarResposta)
-
         if (input.value === quiz.questions[pergunta-1].answer) {
             respostaCorretaId = input.id
         }
