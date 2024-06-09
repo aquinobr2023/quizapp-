@@ -20,6 +20,9 @@
     --bg-mobile: url(./assets/images/pattern-background-mobile-light.svg);
     --bg-desktop: url(./assets/images/pattern-background-desktop-light.svg);
 }
+
+
+
 body.escuro {
     --bg-color: #313e51;
     --bg-mobile: url(./assets/images/pattern-background-mobile-dark.svg);
@@ -29,12 +32,16 @@ body.escuro {
     --button-bg: #3b4d66;
     --shadow:0px 16px 40px 0px rgba(49, 62, 81, 0.14);
 }
+
+
 body{
     height: 100vh;
     background: var(--bg-mobile) var(--bg-color);
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
 header{
     padding: 16px 24px;
     display: flex;
@@ -42,6 +49,9 @@ header{
     max-width: 1160px;
     margin-inline: auto;
 }
+
+
+
 .tema {
     padding: 8px 0;
     display: flex;
@@ -61,6 +71,7 @@ header{
     display: flex;
     cursor: pointer;
 }
+
 
 .tema button div {
     background: var(--white);
@@ -106,7 +117,9 @@ main {
     font-size: 18px;
     font-weight: 500;
     color: var(--primary-text-color);
+    cursor: pointer;
 }
+
 .assuntos button div {
     width: 40px;
     height: 40px;
@@ -119,12 +132,23 @@ main {
 .botao_html div {
     background: var(--bg-html);
 }
+
 .botao_css div {
     background: var(--bg-css);
 }
+
 .botao_javascript div {
     background: var(--bg-javascript);
 }
+
+
+
+
+
+
+
+
+
 .botao_acessibilidade div {
     background: var(--bg-acessibilidade);
 }
@@ -174,6 +198,25 @@ main {
         padding: 20px;
         gap: 32px;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .assuntos button div {
         width: 56px;
         height: 56px;
