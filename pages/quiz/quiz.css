@@ -5,8 +5,6 @@
     font-family: "Rubik", sans-serif;
     -webkit-font-smoothing: antialiased;
 }
-
-
 :root{
     --bg-color: #f4f6fa;
     --purple: #a729f5;
@@ -27,8 +25,6 @@
     --bg-mobile: url(../../assets/images/pattern-background-mobile-light.svg);
     --bg-desktop: url(../../assets/images/pattern-background-desktop-light.svg);
 }
-
-
 body.escuro {
     --bg-color: #313e51;
     --color-span: #626c7f;
@@ -45,9 +41,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-
-
 header {
     display: flex;
     justify-content: space-between;
